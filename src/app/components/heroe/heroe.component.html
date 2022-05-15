@@ -1,0 +1,24 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+    <div class="card-body">
+        <h5 class="card-title">{{ heroe.nombre | uppercase}}</h5>
+        <p class="card-text">{{ heroe.bio }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ heroe.aparicion}}</li>
+    </ul>
+    <div class="btn btn-center">
+        <img *ngIf="heroe.casa=='DC'" src="assets/img/dc-logo.jpg" class="img-logo" alt="DC">
+        <img *ngIf="heroe.casa!='DC' " src="assets/img/marvel-logo.jpg" class="img-logo" alt="Marvel">
+    </div>
+
+    <!-- <div class="card-body">
+        <a [routerLink]="['/heroes']" class="card-link">Regresar</a>
+    </div> -->
+    <div class="d-grid gap-2">
+
+        <button (click)="volver()" class="btn btn-outline-primary" type="button">Volver a Heroes</button>
+
+    </div>
+
+</div>
